@@ -1,0 +1,19 @@
+#!/bin/bash
+
+########################
+#Author: Subha
+#Date:13/10/2025
+#
+#This script outputs the node health
+#
+#Version:V1
+########################
+
+set -x # run in debug mode
+top -h
+
+free -g
+
+echo "print cpu"
+nproc
+
