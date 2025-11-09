@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DEPLOY_SERVER = "ubuntu@<your-ec2-ip>"
+        DEPLOY_SERVER = "ubuntu@52.66.240.91"
         APP_DIR = "/home/ubuntu/app"
     }
 
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "Pulling code from GitHub..."
                 git branch: 'main',
-                    url: 'git@github.com:yourusername/my-ci-pipeline-demo.git',
+                    url: 'git@github.com:subahvarma/my-ci-pipeline-demo-.git',
                     credentialsId: 'github-creds'
             }
         }
@@ -23,7 +23,7 @@ pipeline {
                 sh '''
                 sudo apt-get update -y
                 sudo apt-get install -y python3-pip
-                pip3 install -r requirements.txt
+                pip3 install -r requireents.txt
                 '''
             }
         }
