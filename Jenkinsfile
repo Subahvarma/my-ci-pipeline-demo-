@@ -13,7 +13,7 @@ pipeline {
                 echo "Pulling code from GitHub..."
                 git branch: 'main',
                     url: 'git@github.com:subahvarma/my-ci-pipeline-demo-.git',
-                    credentialsId: 'github-creds'
+                    credentialsId: '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'
             }
         }
 
