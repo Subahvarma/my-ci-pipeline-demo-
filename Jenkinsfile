@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DEPLOY_SERVER = "ubuntu@52.66.240.91"
+        DEPLOY_SERVER = "ubuntu@15.207.98.43"
         APP_DIR = "/home/ubuntu/app"
     }
 
