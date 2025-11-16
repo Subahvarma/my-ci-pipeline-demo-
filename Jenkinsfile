@@ -8,14 +8,15 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                echo "Pulling code from GitHub..."
-                git branch: 'main',
-                    url: 'git@github.com:subahvarma/my-ci-pipeline-demo-.git',
-                    credentialsId: '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'
-            }
-        }
+       stage('Checkout Code') {
+    steps {
+        echo "Pulling code from GitHub..."
+        git branch: 'main',
+            url: 'https://github.com/Subahvarma/my-ci-pipeline-demo-.git',
+            credentialsId: 'subha-git'
+         }
+      }
+
 
         stage('Install Dependencies') {
             steps {
