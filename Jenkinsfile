@@ -2,20 +2,21 @@ pipeline {
     agent any
 
     environment {
-        DEPLOY_SERVER = "ubuntu@<your-ec2-ip>"
+        DEPLOY_SERVER = "ubuntu@15.207.98.43"
         APP_DIR = "/home/ubuntu/app"
     }
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                echo "Pulling code from GitHub..."
-                git branch: 'main',
-                    url: 'git@github.com:yourusername/my-ci-pipeline-demo.git',
-                    credentialsId: 'github-creds'
-            }
-        }
+       stage('Checkout Code') {
+    steps {
+        echo "Pulling code from GitHub..."
+        git branch: 'main',
+            url: 'https://github.com/Subahvarma/my-ci-pipeline-demo-.git',
+            credentialsId: 'subha-git'
+         }
+      }
+
 
         stage('Install Dependencies') {
             steps {
@@ -23,7 +24,7 @@ pipeline {
                 sh '''
                 sudo apt-get update -y
                 sudo apt-get install -y python3-pip
-                pip3 install -r requirements.txt
+                pip3 install -r requireents.txt
                 '''
             }
         }
@@ -48,7 +49,7 @@ pipeline {
 
     post {
         success {
-            echo '✅ Pipeline executed successfully!'
+            echo '✅ Pipeline executed successfullyy!'
         }
         failure {
             echo '❌ Pipeline failed! Check logs.'
